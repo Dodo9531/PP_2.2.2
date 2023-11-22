@@ -16,7 +16,7 @@ public class CarController {
     private final CarService carService = new CarServiceImpl();
 
     @GetMapping("/cars")
-    public String getFirstXCars(ModelMap model, @RequestParam(required = false) int count) {
+    public String getFirstXCars(ModelMap model, @RequestParam(required = false,defaultValue = "5") int count) {
         List<Car> cars = new ArrayList<>();
         cars.add(new Car(1, "model1", 2));
         cars.add(new Car(2, "model2", 4));
